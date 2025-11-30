@@ -5,16 +5,16 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const favRoutes = require('./routes/favRoutes');
+const dashRoutes = require('./routes/dashRoutes');
 const userRoutes = require('./routes/userRoutes');
-const restauranteRoutes = require('./routes/RestauranteRoutes');
-const pedidoRoutes = require('./routes/PedidoRoutes');
 app.use(express.json());
 app.use(helmet());
 app.use(cors())
 
-app.use('/usuarios', userRoutes);
-app.use('/restaurantes', restauranteRoutes);
-app.use('/pedidos', pedidoRoutes);
+app.use('/favoritos', favRoutes);
+app.use('/dashboard', dashRoutes);
+app.use('/usuario', userRoutes);
 
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
