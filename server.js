@@ -8,6 +8,7 @@ const port = 3000;
 const favRoutes = require('./routes/favRoutes');
 const dashRoutes = require('./routes/dashRoutes');
 const userRoutes = require('./routes/userRoutes');
+
 app.use(express.json());
 app.use(helmet());
 app.use(cors())
